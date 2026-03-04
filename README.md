@@ -9,3 +9,15 @@ A little about me:
 - I am interested in learning about how we can use technologies to visualise data and interpret data
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
+
+### big header
+*this is how you italicize* 
+1. ordered bullet points
+2. created using numbers
+
+## smaller header
+**this is how you make it bold instead**
+* unordered bulletpoints
+* made using asterisk
+
+![](https://media1.tenor.com/m/YaCjau306ZYAAAAd/jgmm-cat-meme.gif)
