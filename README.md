@@ -21,3 +21,5 @@ A meme that captures how I currently feel about my university studies is ![](htt
 * made using asterisk
 
 ![](https://media1.tenor.com/m/YaCjau306ZYAAAAd/jgmm-cat-meme.gif)
+
+heres a link to a [website](https://en.wikipedia.org/wiki/Statistics)
