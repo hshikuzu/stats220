@@ -10,12 +10,12 @@ A little about me:
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
-### big header
+# big header
 *this is how you italicize* 
 1. ordered bullet points
 2. created using numbers
 
-## smaller header
+### smaller header
 **this is how you make it bold instead**
 * unordered bulletpoints
 * made using asterisk
