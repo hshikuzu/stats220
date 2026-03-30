@@ -43,7 +43,7 @@ img {
 }
 ```
 
-## daily movement and exercise tracking
+## Daily movement and exercise tracking
 
 this report analyses daily physical activity data collected from google forms
 
@@ -59,12 +59,12 @@ the purpose of this analysis is to explore patterns in daily movement and exerci
 ## summary statistics for step count
 
 the following values summarise the daily step counts recorded in the dataset
-```{r}
-paste("The average number of steps taken per day is", round(mean(steps), 0), "steps")
-paste("The least amount of steps ever taken in a day was", min(steps), "steps")
-paste("The maximum number of steps ever taken in a day was", max(steps), "steps")
-```
-## visualising movement patterns
+
+the average number of steps taken per day is `r round(mean(steps), 0)` steps  
+the least amount of steps ever taken in a day was `r min(steps)` steps  
+the maximum number of steps ever taken in a day was `r max(steps)` steps  
+
+## Visualising movement patterns
 
 the following bar charts show how participants distributed their movement across different categories
 
