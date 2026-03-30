@@ -1,0 +1,101 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+library("tidyverse")
+
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSLhQYB9rsz31Uq3vlbLCGC53ZfJcBCcB7cSDx-ixG7tyeFiJD0JwQeSzWkMD12ap_ouIOCJf2J7C3F/pub?gid=774751212&single=true&output=csv")
+
+latest_data <- logged_data %>% rename(
+  response_date = 1,
+  step_count = 2,
+  step_location = 3,
+  time_spent_walking = 4,
+  minutes_in_gym = 5,
+  type_of_workout = 6
+)
+
+steps <- latest_data$step_count
+```
+
+```{css}
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  line-height: 1.6;
+  margin: 40px;
+  color: #222;
+  background-color: #fafafa;
+}
+
+h1, h2, h3 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+img {
+  margin: 20px 0;
+  max-width: 100%;
+}
+```
+
+## daily movement and exercise tracking
+
+this report analyses daily physical activity data collected from google forms
+
+the dataset includes information about:
+step counts taken outside the house
+main location of movement
+time spent walking
+time spent in the gym
+type of workout performed
+
+the purpose of this analysis is to explore patterns in daily movement and exercise habits using summaries and bar charts
+
+## summary statistics for step count
+
+the following values summarise the daily step counts recorded in the dataset
+```{r}
+paste("The average number of steps taken per day is", round(mean(steps), 0), "steps")
+paste("The least amount of steps ever taken in a day was", min(steps), "steps")
+paste("The maximum number of steps ever taken in a day was", max(steps), "steps")
+```
+## visualising movement patterns
+
+the following bar charts show how participants distributed their movement across different categories
+
+```{r}
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = step_location),
+           fill = "#6a0dad") +
+  labs(
+    title = "Main Location of Movement",
+    x = "Location",
+    y = "Number of Responses"
+  )
+
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = time_spent_walking),
+           fill = "#B2C248") +
+  labs(
+    title = "Time Spent Walking Outside",
+    x = "Time Category",
+    y = "Number of Responses"
+  )
+
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = minutes_in_gym),
+           fill = "#ff7f50") +
+  labs(
+    title = "Time Spent in the Gym",
+    x = "Gym Time Category",
+    y = "Number of Responses"
+  )
+```
